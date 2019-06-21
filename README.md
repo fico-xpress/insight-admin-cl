@@ -18,8 +18,10 @@ The Xpress Insight Admin application allows the users to perform **add**, **upda
 * Maven
  
  
-#### Setup Instructions
+#### Setup Instructions 
+* Precompiled runnable artifact (insightadmincli.jar) is available in the target. Follow the instructions given below to regenerate.
 In the console, enter the following commands, and press return after each one. 
+
 1. git clone https://github.com/fico-xpress/insight-admin-cl.git
 2. cd insight-admin-cl
 3. mvn clean install (include the -DskipTests option to skip running the tests)
