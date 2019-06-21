@@ -72,9 +72,9 @@ public class UpdateUserCmdLineTest extends UtilsCLITest {
         try {
             List<String> resultsOfUserUpdateCommandInput = asList(UtilsCLITest.consoleCommandExecuter(userUpdateCommandInput).split("\\n"));
             //check the successful update message
-            assertTrue(resultsOfUserUpdateCommandInput.get(resultsOfUserUpdateCommandInput.size() - 1).contains(" Successfully updated."));
+            assertTrue(resultsOfUserUpdateCommandInput.get(resultsOfUserUpdateCommandInput.size() - 2).contains(" Successfully updated."));
         } catch (Exception e) {
-            assertTrue(resultOfUpdatedAttributeFirstName.get(resultOfUpdatedAttributeFirstName.size() - 1).trim().contains(userUpdateCommandInput[userUpdateCommandInput.length - 1].trim()));
+            assertTrue(resultOfUpdatedAttributeFirstName.get(resultOfUpdatedAttributeFirstName.size() - 2).trim().contains(userUpdateCommandInput[userUpdateCommandInput.length - 1].trim()));
             e.printStackTrace();
         }
     }
