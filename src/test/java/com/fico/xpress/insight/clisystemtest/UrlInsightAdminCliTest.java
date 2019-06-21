@@ -22,8 +22,7 @@ public class UrlInsightAdminCliTest {
 
         String[] verifyUrlValidationCmd = (WINDOWS_COMMAND+" user list -u admin -p admin123 -url " + INSIGHT_HOST.replace("http", "https")).split(" ");
         String expectedResultWhenHostURlMissing = "Could not connect to server.";
-        assertTrue(UtilsCLITest.consoleCommandExecuter(verifyUrlValidationCmd).startsWith(expectedResultWhenHostURlMissing));
-
+        assertTrue(UtilsCLITest.consoleCommandExecuter(verifyUrlValidationCmd).split("\n")[1].startsWith(expectedResultWhenHostURlMissing));
     }
 
     @Test

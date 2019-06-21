@@ -35,7 +35,7 @@ public class UpdateAuthorityGroupCmdLineTest {
     public void verifyUpdateAuthorityGroupCmdLineTest() throws IOException {
         Long newTime = new java.util.Date().getTime();
         String[] addAuthGroup = (WINDOWS_COMMAND+" authgroup add -an testAg1" + newTime + " -u admin -p admin123 -url " + URL).split(" ");
-        String testUserName = (UtilsCLITest.consoleCommandExecuter(addAuthGroup).split(" "))[0];
+        String testUserName = (UtilsCLITest.consoleCommandExecuter(addAuthGroup).split("\n"))[1].split(" ")[0];
         String[] updateauthgroupCmd = (WINDOWS_COMMAND+" authgroup update -an " + testUserName + " -ad \"Testnewdescription\" -at DEVELOPER -u admin -p admin123 -url " + URL).split(" ");
         String resultsOFUpdateCmd = UtilsCLITest.consoleCommandExecuter(updateauthgroupCmd);
         assertTrue(resultsOFUpdateCmd.contains("Successfully updated"));
