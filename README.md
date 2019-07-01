@@ -16,6 +16,7 @@ The Xpress Insight Admin application allows the users to perform **add**, **upda
 * Java 11 
 * JAVA_HOME environment variable should point to jdk11 installation path.
 * Maven
+* Xpress Insight User Admin Command Line is compatible with insight version starting **4.12**
  
  
 #### Setup Instructions 
