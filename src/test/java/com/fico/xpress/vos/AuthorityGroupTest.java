@@ -54,8 +54,5 @@ public class AuthorityGroupTest {
         Assert.assertTrue(authorityGroup.getSelected());
     }
 
-    @Test
-    public void testEqualsAndHashCode(){
-        EqualsVerifier.forClass(AuthorityGroup.class).suppress(Warning.NONFINAL_FIELDS).withIgnoredFields("description", "selected").verify();
-    }
+
 }

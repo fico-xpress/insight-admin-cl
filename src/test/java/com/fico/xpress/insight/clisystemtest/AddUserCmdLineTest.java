@@ -159,12 +159,12 @@ public class AddUserCmdLineTest extends UtilsCLITest {
     @Test
     public void verifyMultipleAuthorityUserIsGettingAddedInList() throws IOException {
         String[] verifyMultipleAuthorityUserIsGettingAddedInList = {WINDOWS_COMMAND, "user", "add", "-u", "admin", "-p", "admin123", "-tu", "TestAdmin2", "-fn", "adarsh", "-ln", "jais", "-tp", "admin123", "-ag", "AdvancedUser", "-ag", "Developer","-url", URL};
+        UtilsCLITest.consoleCommandExecuter(verifyMultipleAuthorityUserIsGettingAddedInList);
         //to check whether Authority Group Added or not in the list
         String[] resultsOfDescribeUser = {WINDOWS_COMMAND, "user", "describe", "-u", "admin", "-p", "admin123", "-tu", "TestAdmin2","-url", URL};
         List resultsVerifyDescribeUser = Arrays.asList(UtilsCLITest.consoleCommandExecuter(resultsOfDescribeUser).split("\\n"));
         List check_AuthorityGroup_Value = Arrays.asList(resultsVerifyDescribeUser.get(resultsVerifyDescribeUser.size() - 3).toString().split(":"));
         if (check_AuthorityGroup_Value.get(check_AuthorityGroup_Value.size() - 1) != null) {
-            UtilsCLITest.consoleCommandExecuter(verifyMultipleAuthorityUserIsGettingAddedInList);
             List resultsToVerifyDescribeUserAfterAGAdded = Arrays.asList(UtilsCLITest.consoleCommandExecuter(resultsOfDescribeUser).split("\\n"));
             List check_UpdatedAuthorityGroup_Value = Arrays.asList(resultsToVerifyDescribeUserAfterAGAdded.get(resultsToVerifyDescribeUserAfterAGAdded.size() - 3).toString().split(":"));
             List second_AG_Value = Arrays.asList(check_UpdatedAuthorityGroup_Value.get(check_UpdatedAuthorityGroup_Value.size() - 1).toString().split(","));
