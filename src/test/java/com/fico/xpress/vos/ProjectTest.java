@@ -43,8 +43,5 @@ public class ProjectTest {
         assertEquals(true, project.getSelected());
     }
 
-    @Test
-    public void testEqualsAndHashCode(){
-        EqualsVerifier.forClass(Project.class).suppress(Warning.NONFINAL_FIELDS).withIgnoredFields("ref", "selected").verify();
-    }
+
 }
