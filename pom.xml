@@ -9,7 +9,7 @@
     <version>0.0.1</version>
 
     <properties>
-        <version.spring>5.1.0.RELEASE</version.spring>
+        <version.spring>5.2.24.RELEASE</version.spring>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
